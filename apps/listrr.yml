@@ -15,7 +15,7 @@
       set_fact:
         pgrole: 'listrr'
         intport: '80'
-        extport: '80'
+        extport: '43324'
         image: 'theultimatecoder/listrr.pro'
 
     # CORE (MANDATORY) ############################################################
@@ -34,7 +34,7 @@
     - name: 'Setting PG Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}:/app'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/mnt:/mnt'
           - '/etc/localtime:/etc/localtime:ro'
